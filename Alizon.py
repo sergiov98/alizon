@@ -1,6 +1,7 @@
 import configparser
 from amazon.api import AmazonAPI
 from aliexp import calc_result
+import sys
 
 def main():
 
@@ -13,7 +14,7 @@ def main():
   amazon = AmazonAPI(AMAZON_KEY, AMAZON_SECRET, AMAZON_ASSOCIATE)
 
   print "Enter product link: "
-  selfStr = raw_input()
+  selfStr = argv[1]
 
   if ('/dp/' in selfStr) or ('/gp/' in selfStr):
     try:
